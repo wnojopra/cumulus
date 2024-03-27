@@ -55,7 +55,7 @@ workflow cellranger_multi {
         # Arn string of AWS queue
         String awsQueueArn = ""
         # Backend
-        String backend = "gcp"
+        String backend = "aws"
     }
 
     Map[String, String] acronym2uri = read_map(acronym_file)
