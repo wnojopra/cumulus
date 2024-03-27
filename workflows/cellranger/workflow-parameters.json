@@ -1,0 +1,216 @@
+{
+    "feature_disk_space": {
+        "description": "Optional disk space needed for cumulus_adt",
+        "optional": true
+    },
+    "docker_registry": {
+        "description": "Which docker registry to use: quay.io/cumulus (default) or cumulusprod",
+        "optional": true
+    },
+    "mkfastq_use_bases_mask": {
+        "description": "Override the read lengths as specified in RunInfo.xml",
+        "optional": true
+    },
+    "cellranger_version": {
+        "description": "cellranger/cellranger-atac/cellranger-arc mkfastq registry, default to gcr.io/broad-cumulus",
+        "optional": true
+    },
+    "crispr_barcode_pos": {
+        "description": "Barcode start position at Read 2 (0-based coordinate) for CRISPR",
+        "optional": true
+    },
+    "vdj_disk_space": {
+        "description": "Optional disk space needed for cell ranger vdj.",
+        "optional": true
+    },
+    "arc_memory": {
+        "description": "Memory string for cellranger-arc count",
+        "optional": true
+    },
+    "delete_input_bcl_directory": {
+        "description": "Whether to delete input_bcl_directory, default: false",
+        "optional": true
+    },
+    "input_csv_file": {
+        "description": "File input_csv_file - gs URL"
+    },
+    "mkfastq_disk_space": {
+        "description": "Optional disk space for mkfastq.",
+        "optional": true
+    },
+    "scaffold_sequence": {
+        "description": "scaffold sequence for CRISPR, default is \"\"",
+        "optional": true
+    },
+    "max_mismatch": {
+        "description": "maximum hamming distance in feature barcodes (change default to 2)",
+        "optional": true
+    },
+    "arc_num_cpu": {
+        "description": "Number of cpus for cellranger-arc count",
+        "optional": true
+    },
+    "output_directory": {
+        "description": "Output directory - gs URL"
+    },
+    "arc_min_gex_count": {
+        "description": "Cell caller override: define the minimum number of GEX UMI counts for a cell barcode.",
+        "optional": true
+    },
+    "vdj_chain": {
+        "description": "Force the analysis to be carried out for a particular chain type.",
+        "optional": true
+    },
+    "zones": {
+        "description": "Google cloud zones, default to \"us-central1-a us-central1-b us-central1-c us-central1-f us-east1-b us-east1-c us-east1-d us-west1-a us-west1-b us-west1-c\"",
+        "optional": true
+    },
+    "peaks": {
+        "description": "A BED file to override peak caller",
+        "optional": true
+    },
+    "num_cpu": {
+        "description": "Number of cpus per cellranger and spaceranger job",
+        "optional": true
+    },
+    "secondary": {
+        "description": "Perform secondary analysis of the gene-barcode matrix (dimensionality reduction, clustering and visualization). Default: false.",
+        "optional": true
+    },
+    "cumulus_feature_barcoding_version": {
+        "description": "cellranger/cellranger-atac/cellranger-arc mkfastq registry, default to gcr.io/broad-cumulus",
+        "optional": true
+    },
+    "cmo_set": {
+        "description": "CMO set CSV file, declaring CMO constructs and associated barcodes",
+        "optional": true
+    },
+    "feature_num_cpu": {
+        "description": "Number of cpus for cumulus-adt",
+        "optional": true
+    },
+    "mkfastq_barcode_mismatches": {
+        "description": "Number of allowed mismatches per index",
+        "optional": true
+    },
+    "memory": {
+        "description": "Memory string",
+        "optional": true
+    },
+    "count_disk_space": {
+        "description": "Optional disk space needed for cell ranger count.",
+        "optional": true
+    },
+    "atac_num_cpu": {
+        "description": "Number of cpus for cellranger-atac count",
+        "optional": true
+    },
+    "min_read_ratio": {
+        "description": "minimum read count ratio (non-inclusive) to justify a feature given a cell barcode and feature combination, only used for data type crispr",
+        "optional": true
+    },
+    "run_mkfastq": {
+        "description": "If run mkfastq",
+        "optional": true
+    },
+    "arc_disk_space": {
+        "description": "Optional disk space needed for cellranger-arc count",
+        "optional": true
+    },
+    "run_count": {
+        "description": "If run count",
+        "optional": true
+    },
+    "atac_memory": {
+        "description": "Memory string for cellranger-atac count",
+        "optional": true
+    },
+    "awsQueueArn": {
+        "description": "Arn string of AWS queue to use",
+        "optional": true
+    },
+    "mkfastq_filter_single_index": {
+        "description": "Only demultiplex samples identified by an i7-only sample index, ignoring dual-indexed samples.  Dual-indexed samples will not be demultiplexed.",
+        "optional": true
+    },
+    "atac_dim_reduce": {
+        "description": "For atac, choose the algorithm for dimensionality reduction prior to clustering and tsne: 'lsa' (default), 'plsa', or 'pca'.",
+        "optional": true
+    },
+    "backend": {
+        "description": "Backend",
+        "optional": true
+    },
+    "force_cells": {
+        "description": "Force pipeline to use this number of cells, bypassing the cell detection algorithm, mutually exclusive with expect_cells.",
+        "optional": true
+    },
+    "acronym_file": {
+        "description": "Index TSV file",
+        "optional": true
+    },
+    "mkfastq_delete_undetermined": {
+        "description": "Delete undetermined FASTQ files generated by bcl2fastq2",
+        "optional": true
+    },
+    "arc_gex_exclude_introns": {
+        "description": "Disable counting of intronic reads.",
+        "optional": true
+    },
+    "arc_min_atac_count": {
+        "description": "Cell caller override: define the minimum number of ATAC transposition events in peaks (ATAC counts) for a cell barcode.",
+        "optional": true
+    },
+    "atac_disk_space": {
+        "description": "Optional disk space needed for cellranger-atac count",
+        "optional": true
+    },
+    "no_bam": {
+        "description": "If generate bam outputs. This is also a spaceranger argument.",
+        "optional": true
+    },
+    "config_version": {
+        "description": "config version",
+        "optional": true
+    },
+    "cellranger_atac_version": {
+        "description": "cellranger/cellranger-atac/cellranger-arc mkfastq registry, default to gcr.io/broad-cumulus",
+        "optional": true
+    },
+    "include_introns": {
+        "description": "If count reads mapping to intronic regions",
+        "optional": true
+    },
+    "preemptible": {
+        "description": "Number of preemptible tries",
+        "optional": true
+    },
+    "mkfastq_force_single_index": {
+        "description": "If 10x-supplied i7/i5 paired indices are specified, but the flowcell was run with only one sample index, allow the demultiplex to proceed using the i7 half of the sample index pair.",
+        "optional": true
+    },
+    "vdj_denovo": {
+        "description": "Do not align reads to reference V(D)J sequences before de novo assembly. Default: false",
+        "optional": true
+    },
+    "mkfastq_docker_registry": {
+        "description": "cellranger/cellranger-atac/cellranger-arc mkfastq registry, default to gcr.io/broad-cumulus",
+        "optional": true
+    },
+    "expect_cells": {
+        "description": "Expected number of recovered cells. Mutually exclusive with force_cells",
+        "optional": true
+    },
+    "cellranger_arc_version": {
+        "description": "cellranger/cellranger-atac/cellranger-arc mkfastq registry, default to gcr.io/broad-cumulus",
+        "optional": true
+    },
+    "multi_disk_space": {
+        "description": "Optional disk space needed for cell ranger multi.",
+        "optional": true
+    },
+    "feature_memory": {
+        "description": "Optional memory string for cumulus_adt",
+        "optional": true
+    }
+}

@@ -1,0 +1,9 @@
+Sample,Reference,Flowcell,Lane,Index,Chemistry,DataType
+MantonBM1_HiSeq_1,GRCh38-2020-A,gs://terra-featured-workspaces/Cumulus/BM_fastqs,*,SI-GA-A8,threeprime,rna
+MantonBM2_HiSeq_1,GRCh38-2020-A,gs://terra-featured-workspaces/Cumulus/BM_fastqs,*,SI-GA-A8,threeprime,rna
+MantonBM3_HiSeq_1,GRCh38-2020-A,gs://terra-featured-workspaces/Cumulus/BM_fastqs,*,SI-GA-A8,threeprime,rna
+MantonBM4_HiSeq_1,GRCh38-2020-A,gs://terra-featured-workspaces/Cumulus/BM_fastqs,*,SI-GA-A8,threeprime,rna
+MantonBM5_HiSeq_1,GRCh38-2020-A,gs://terra-featured-workspaces/Cumulus/BM_fastqs,*,SI-GA-A8,threeprime,rna
+MantonBM6_HiSeq_1,GRCh38-2020-A,gs://terra-featured-workspaces/Cumulus/BM_fastqs,*,SI-GA-A8,threeprime,rna
+MantonBM7_HiSeq_1,GRCh38-2020-A,gs://terra-featured-workspaces/Cumulus/BM_fastqs,*,SI-GA-A8,threeprime,rna
+MantonBM8_HiSeq_1,GRCh38-2020-A,gs://terra-featured-workspaces/Cumulus/BM_fastqs,*,SI-GA-A8,threeprime,rna
