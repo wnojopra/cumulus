@@ -4,7 +4,7 @@ import "cellranger_mkfastq.wdl" as crm
 import "cellranger_count.wdl" as crc
 import "cellranger_multi.wdl" as crmulti
 import "cellranger_vdj.wdl" as crv
-import "../cumulus/cumulus_adt.wdl" as ca
+import "cumulus_adt.wdl" as ca
 import "cellranger_atac_mkfastq.wdl" as cram
 import "cellranger_atac_count.wdl" as crac
 import "cellranger_arc_mkfastq.wdl" as crarm
@@ -18,7 +18,8 @@ workflow cellranger_workflow {
         String output_directory
 
         # If run mkfastq
-        Boolean run_mkfastq = true
+        # Boolean run_mkfastq = true
+        Boolean run_mkfastq = false
         # If run count
         Boolean run_count = true
 
@@ -99,7 +100,7 @@ workflow cellranger_workflow {
         File acronym_file = "gs://regev-lab/resources/cellranger/index.tsv"
 
         # 7.2.0, 7.1.0, 7.0.1, 7.0.0, 6.1.2, 6.1.1, 6.0.2, 6.0.1, 6.0.0, 5.0.1, 5.0.0
-        String cellranger_version = "7.2.0"
+        String cellranger_version = "7.1.0"
         # 0.11.2, 0.11.1, 0.11.0, 0.10.0, 0.9.0, 0.8.0, 0.7.0, 0.6.0, 0.5.0, 0.4.0, 0.3.0, 0.2.0
         String cumulus_feature_barcoding_version = "0.11.2"
         # 2.1.0, 2.0.0, 1.2.0, 1.1.0
@@ -112,7 +113,8 @@ workflow cellranger_workflow {
         # Which docker registry to use: quay.io/cumulus (default) or cumulusprod
         String docker_registry = "quay.io/cumulus"
         # cellranger/cellranger-atac/cellranger-arc mkfastq registry, default to gcr.io/broad-cumulus
-        String mkfastq_docker_registry = "gcr.io/broad-cumulus"
+        # String mkfastq_docker_registry = "gcr.io/aaa-willyn-test"
+        String mkfastq_docker_registry = "gcr.io/terra-strong-diamond-3943/mkfastq/"
         # Google cloud zones, default to "us-central1-a us-central1-b us-central1-c us-central1-f us-east1-b us-east1-c us-east1-d us-west1-a us-west1-b us-west1-c"
         String zones = "us-central1-a us-central1-b us-central1-c us-central1-f us-east1-b us-east1-c us-east1-d us-west1-a us-west1-b us-west1-c"
         # Backend

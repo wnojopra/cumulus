@@ -101,7 +101,7 @@ task run_cellranger_mkfastq {
         export TMPDIR=/tmp
         export BACKEND=~{backend}
         monitor_script.sh > monitoring.log &
-        strato sync -m ~{input_bcl_directory} ~{run_id}
+        strato sync --backend ~{backend} -m ~{input_bcl_directory} ~{run_id}
 
         python <<CODE
         import os
@@ -122,7 +122,14 @@ task run_cellranger_mkfastq {
             mkfastq_args.extend(['--use-bases-mask', '~{use_bases_mask}'])
         if '~{delete_undetermined}' == 'true':
             mkfastq_args.append('--delete-undetermined')
-        p = subprocess.run(mkfastq_args)
+        try:
+            p = subprocess.run(mkfastq_args, stderr=subprocess.PIPE, check=True)
+        except subprocess.CalledProcessError as exc:
+            print("Error:", exc.returncode, exc.output)
+        else:
+            # Access the captured stderr if needed
+            stderr_output = result.stderr
+            print("Standard error:", stderr_output.decode())
 
         if p.returncode != 0: # ./MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/chnk0-u8d92d5526b/_stderr
             if os.path.exists('results/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/'):
@@ -141,7 +148,7 @@ task run_cellranger_mkfastq {
 
         CODE
 
-        strato sync -m results/outs "~{output_directory}/~{run_id}_fastqs"
+        strato sync --backend ~{backend} -m results/outs "~{output_directory}/~{run_id}_fastqs"
 
         python <<CODE
         from subprocess import check_call, check_output, CalledProcessError
