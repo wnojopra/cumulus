@@ -111,14 +111,15 @@ workflow cellranger_workflow {
         String config_version = "0.3"
 
         # Which docker registry to use: quay.io/cumulus (default) or cumulusprod
-        String docker_registry = "quay.io/cumulus"
+        #String docker_registry = "quay.io/cumulus"
+        String docker_registry = "639879951631.dkr.ecr.us-east-1.amazonaws.com"
         # cellranger/cellranger-atac/cellranger-arc mkfastq registry, default to gcr.io/broad-cumulus
         # String mkfastq_docker_registry = "gcr.io/aaa-willyn-test"
         String mkfastq_docker_registry = "gcr.io/terra-strong-diamond-3943/mkfastq/"
         # Google cloud zones, default to "us-central1-a us-central1-b us-central1-c us-central1-f us-east1-b us-east1-c us-east1-d us-west1-a us-west1-b us-west1-c"
         String zones = "us-central1-a us-central1-b us-central1-c us-central1-f us-east1-b us-east1-c us-east1-d us-west1-a us-west1-b us-west1-c"
         # Backend
-        String backend = "gcp"
+        String backend = "aws"
         # Number of cpus per cellranger and spaceranger job
         Int num_cpu = 32
         # Memory string
