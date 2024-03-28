@@ -101,7 +101,7 @@ task run_cellranger_mkfastq {
         export TMPDIR=/tmp
         export BACKEND=~{backend}
         monitor_script.sh > monitoring.log &
-        strato sync --backend ~{backend} -m ~{input_bcl_directory} ~{run_id}
+        strato sync -m ~{input_bcl_directory} ~{run_id}
 
         python <<CODE
         import os
@@ -148,7 +148,7 @@ task run_cellranger_mkfastq {
 
         CODE
 
-        strato sync --backend ~{backend} -m results/outs "~{output_directory}/~{run_id}_fastqs"
+        strato sync -m results/outs "~{output_directory}/~{run_id}_fastqs"
 
         python <<CODE
         from subprocess import check_call, check_output, CalledProcessError
